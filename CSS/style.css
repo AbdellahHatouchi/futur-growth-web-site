@@ -1965,7 +1965,7 @@ header .menu {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    gap: 1rem;
+    gap: 4rem;
     justify-content: center;
 }
 
@@ -2037,7 +2037,9 @@ header .menu {
 }
 
 @media screen and (min-width:1280px) {
-
+    .section-13 header {
+        gap:1rem;
+    }
     .section-13 header,
     .section-13>div {
         flex-direction: row;
