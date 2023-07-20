@@ -1,20 +1,20 @@
 const btnToggle = document.getElementById("menu-btn")
 const navItems = document.getElementById("nav-items")
-btnToggle.addEventListener('click',()=>{
+btnToggle.addEventListener('click', () => {
     navItems.classList.toggle('open')
 })
 
 
 // create circle text with animation :
 const elementsCircle = document.querySelectorAll('.circle-data-text');
-const circleData = (element)=>{
+const circleData = (element) => {
     element.innerHTML = element.innerHTML.split('').map(
         (char, i) => (
             `<span style="transform:rotate(${i * 14}deg)">${char}</span>`
         )
     ).join("")
 }
-Array.from(elementsCircle).forEach((element)=>circleData(element))
+Array.from(elementsCircle).forEach((element) => circleData(element))
 // end
 
 // animation number 
@@ -31,14 +31,14 @@ const incrementNumber = () => {
         elementNumber.innerHTML = `+${startValue}.`
         if (startValue === endValue) {
             clearInterval(counter);
-            activete=false;
+            activete = false;
         }
     }, duration)
 }
 function handleScroll() {
     const scrollPosition = window.scrollY;
 
-    if (elementNumber.offsetTop - elementNumber.offsetHeight -200 <= scrollPosition && !activete) {
+    if (elementNumber.offsetTop - elementNumber.offsetHeight - 200 <= scrollPosition && !activete) {
         incrementNumber();
         // window.removeEventListener('scroll', handleScroll);
     }
@@ -47,24 +47,24 @@ function handleScroll() {
 
 
 // accordion
-const accordion = (elements,className)=>{
-    Array.from(elements).forEach((element)=>{
-        element.addEventListener('click',function(){
+const accordion = (elements, className) => {
+    Array.from(elements).forEach((element) => {
+        element.addEventListener('click', function () {
             this.classList.toggle(className)
         })
     })
 }
 const prentElement = document.querySelector('.list-items');
 const childrenElement = prentElement.children
-accordion(childrenElement,'open');
+accordion(childrenElement, 'open');
 // accordion 2:
 const prentElementTwo = document.getElementById('accordion');
-const childrenElementTwo = prentElementTwo.children 
-accordion(childrenElementTwo,'show');
+const childrenElementTwo = prentElementTwo.children
+accordion(childrenElementTwo, 'show');
 // accordion 3:
 const prentElementThree = document.getElementById('accordion-three');
-const childrenElementThree = prentElementThree.children 
-accordion(childrenElementThree,'show');
+const childrenElementThree = prentElementThree.children
+accordion(childrenElementThree, 'show');
 // create content of text as tape with animation
 const textContainer = document.querySelectorAll('.text-container');
 const repeatingText = document.querySelector('.repeating-text');
@@ -80,7 +80,7 @@ function repeatText() {
     Array.from(textContainer).forEach((_, i) => {
         textContainer[i].innerHTML = repeatedText;
     });
-
+    window.removeEventListener('resize', repeatText);
 }
 
 window.addEventListener('resize', repeatText);
@@ -91,7 +91,7 @@ const elements1 = document.querySelectorAll('.animate-on-scroll');
 const elements2 = document.querySelectorAll('.animate-on-scrollX');
 const elements3 = document.querySelectorAll('.animate-on-scroll-X');
 const elements4 = document.querySelectorAll('.animate-on-scroll-Y');
-const elements = [...elements1,...elements2,...elements3,...elements4]
+const elements = [...elements1, ...elements2, ...elements3, ...elements4]
 function animateOnScroll() {
     for (let i = 0; i < elements.length; i++) {
         const element = elements[i];
@@ -107,7 +107,7 @@ function animateOnScroll() {
 
 animateOnScroll();
 
-window.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', () => {
     animateOnScroll();
     handleScroll();
 });
