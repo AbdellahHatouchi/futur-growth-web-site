@@ -1,0 +1,17 @@
+/* 
+    Shoot3/Stroke => #EBEFFF
+    white => white
+    black => black
+    red =>#A4161A
+    gradiant => #000000, #A4161A
+    whiteGradiant =>#EAEAEA, #EAEAEA00
+    bgBlack => #171B1E
+    red2=>#A41619
+*/
+:root {
+    --backgroundBlack:#161A1D;
+    --red-700:#A4161A;
+    --white:#fff;
+    --gray :rgba(255, 255, 255, 0.20);
+    --gray-border:#767676;
+}
